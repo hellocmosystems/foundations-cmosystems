@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CMO Systems Foundations — Revenue Foundations for Founder-Led Businesses</title>
+<meta name="description" content="Foundations is the entry tier of CMO Systems — a focused 6–8 week sprint that aligns Culture, Marketing, and Operations for service businesses and bootstrapped SMBs.">
+<meta name="theme-color" content="#1F2A44">
+
+<!-- Open Graph -->
+<meta property="og:title" content="CMO Systems Foundations">
+<meta property="og:description" content="Same framework. Smaller scope. Built for the businesses where the founder is still the system.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://foundations.cmosystems.co">
+
+<style>
+  :root {
+    --navy: #1F2A44;
+    --slate: #3D4C73;
+    --accent: #B98E3A;
+    --accent-warm: #D4AC60;
+    --light: #EEF1F7;
+    --cream: #FAF7F1;
+    --border: #DDE1EA;
+    --text: #1F2A44;
+    --muted: #5A6273;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    color: var(--text);
+    line-height: 1.55;
+    background: #fff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  /* ---- nav ---- */
+  nav.topbar {
+    position: sticky;
+    top: 0;
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: saturate(180%) blur(8px);
+    -webkit-backdrop-filter: saturate(180%) blur(8px);
+    border-bottom: 1px solid var(--border);
+    z-index: 100;
+  }
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+  }
+  .brand {
+    font-weight: 700;
+    color: var(--navy);
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-decoration: none;
+  }
+  .brand .accent { color: var(--accent); }
+  .nav-links { display: flex; gap: 24px; }
+  .nav-links a {
+    color: var(--slate);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .nav-links a:hover { color: var(--navy); }
+  @media (max-width: 700px) { .nav-links { display: none; } }
+
+  /* ---- hero ---- */
+  .hero {
+    padding: 96px 0 88px;
+    background: linear-gradient(180deg, #fff 0%, var(--cream) 100%);
+    border-bottom: 1px solid var(--border);
+  }
+  .hero .eyebrow {
+    color: var(--accent);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    margin-bottom: 22px;
+  }
+  .hero h1 {
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 800;
+    color: var(--navy);
+    letter-spacing: -0.02em;
+    line-height: 1.08;
+    margin-bottom: 24px;
+    max-width: 22ch;
+  }
+  .hero .deck {
+    font-size: clamp(18px, 1.6vw, 22px);
+    color: var(--slate);
+    max-width: 56ch;
+    margin-bottom: 36px;
+    line-height: 1.55;
+  }
+  .hero .tagline {
+    font-style: italic;
+    color: var(--slate);
+    font-size: 17px;
+    margin-bottom: 44px;
+    border-left: 3px solid var(--accent);
+    padding-left: 14px;
+  }
+  .cta-row { display: flex; gap: 16px; flex-wrap: wrap; }
+  .btn {
+    display: inline-block;
+    padding: 14px 26px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
+    transition: transform 0.06s ease, box-shadow 0.18s ease, background 0.18s ease;
+    border: none;
+    cursor: pointer;
+    line-height: 1.2;
+  }
+  .btn-primary {
+    background: var(--navy);
+    color: #fff;
+  }
+  .btn-primary:hover {
+    background: #2a3759;
+    box-shadow: 0 8px 20px -8px rgba(31, 42, 68, 0.4);
+    transform: translateY(-1px);
+  }
+  .btn-secondary {
+    background: #fff;
+    color: var(--navy);
+    border: 1.5px solid var(--border);
+  }
+  .btn-secondary:hover {
+    border-color: var(--navy);
+  }
+
+  /* ---- generic section ---- */
+  section {
+    padding: 88px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  section.alt { background: var(--light); }
+  section h2 {
+    font-size: clamp(28px, 3.4vw, 40px);
+    font-weight: 800;
+    color: var(--navy);
+    letter-spacing: -0.01em;
+    margin-bottom: 18px;
+    line-height: 1.15;
+  }
+  section .lede {
+    font-size: 19px;
+    color: var(--slate);
+    max-width: 64ch;
+    margin-bottom: 40px;
+  }
+
+  /* ---- pillars ---- */
+  .pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 12px;
+  }
+  @media (max-width: 800px) { .pillars { grid-template-columns: 1fr; } }
+  .pillar {
+    padding: 28px;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    border-top: 3px solid var(--accent);
+  }
+  .pillar h3 {
+    color: var(--navy);
+    font-size: 19px;
+    margin-bottom: 10px;
+    font-weight: 700;
+  }
+  .pillar p {
+    color: var(--slate);
+    font-size: 16px;
+    line-height: 1.55;
+  }
+
+  /* ---- phase cards ---- */
+  .phases {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-top: 12px;
+  }
+  @media (max-width: 800px) { .phases { grid-template-columns: 1fr; } }
+  .phase {
+    padding: 32px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: #fff;
+    position: relative;
+  }
+  .phase .label {
+    color: var(--accent);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+  }
+  .phase h3 {
+    font-size: 22px;
+    color: var(--navy);
+    margin-bottom: 14px;
+    font-weight: 700;
+  }
+  .phase ul {
+    list-style: none;
+    margin-bottom: 22px;
+  }
+  .phase ul li {
+    padding-left: 22px;
+    position: relative;
+    margin-bottom: 8px;
+    color: var(--slate);
+    font-size: 15.5px;
+  }
+  .phase ul li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 700;
+  }
+  .phase .deliverable {
+    padding-top: 18px;
+    border-top: 1px solid var(--border);
+    font-size: 14px;
+    color: var(--muted);
+  }
+  .phase .deliverable strong {
+    display: block;
+    color: var(--navy);
+    font-size: 16px;
+    margin-top: 4px;
+  }
+
+  /* ---- pricing tables ---- */
+  .price-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 1px 0 var(--border);
+    margin-top: 12px;
+  }
+  .price-table thead {
+    background: var(--navy);
+    color: #fff;
+  }
+  .price-table th {
+    padding: 16px 18px;
+    text-align: left;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .price-table td {
+    padding: 18px;
+    border-top: 1px solid var(--border);
+    font-size: 16px;
+    color: var(--slate);
+  }
+  .price-table td:first-child {
+    color: var(--navy);
+    font-weight: 600;
+  }
+  .price-table td.price {
+    color: var(--navy);
+    font-weight: 700;
+    font-size: 18px;
+  }
+  .price-table tbody tr:nth-child(even) { background: #FAFBFD; }
+  @media (max-width: 700px) {
+    .price-table th, .price-table td { padding: 12px 10px; font-size: 14px; }
+    .price-table td.price { font-size: 16px; }
+  }
+
+  /* ---- outcomes list ---- */
+  .outcomes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px 32px;
+    margin-top: 12px;
+  }
+  @media (max-width: 700px) { .outcomes { grid-template-columns: 1fr; } }
+  .outcomes li {
+    list-style: none;
+    padding: 16px 0;
+    padding-left: 32px;
+    position: relative;
+    border-top: 1px solid var(--border);
+    color: var(--slate);
+    font-size: 16px;
+  }
+  .outcomes li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 16px;
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 18px;
+  }
+  .outcomes li:nth-child(-n+2) { border-top: none; }
+  @media (max-width: 700px) { .outcomes li:nth-child(2) { border-top: 1px solid var(--border); } }
+
+  /* ---- who-for + graduation ---- */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 56px;
+    align-items: start;
+  }
+  @media (max-width: 800px) { .two-col { grid-template-columns: 1fr; gap: 32px; } }
+  .who-list {
+    list-style: none;
+  }
+  .who-list li {
+    padding: 12px 0 12px 28px;
+    position: relative;
+    color: var(--slate);
+    border-bottom: 1px solid var(--border);
+    font-size: 16px;
+  }
+  .who-list li::before {
+    content: "◆";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    top: 12px;
+    font-size: 12px;
+  }
+  .grad-card {
+    padding: 28px;
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+  }
+  .grad-card h3 {
+    font-size: 18px;
+    color: var(--navy);
+    margin-bottom: 12px;
+  }
+  .grad-card p {
+    color: var(--slate);
+    font-size: 15.5px;
+    line-height: 1.6;
+  }
+
+  /* ---- closer ---- */
+  .closer {
+    background: var(--navy);
+    color: #fff;
+    text-align: center;
+    padding: 96px 0;
+  }
+  .closer .lines p {
+    font-size: clamp(18px, 2vw, 22px);
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 8px;
+    font-style: italic;
+  }
+  .closer .tagline {
+    font-size: clamp(26px, 3.4vw, 36px);
+    font-weight: 800;
+    color: #fff;
+    margin-top: 24px;
+    letter-spacing: -0.01em;
+  }
+
+  /* ---- contact / form ---- */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 56px;
+    margin-top: 12px;
+  }
+  @media (max-width: 800px) { .contact-grid { grid-template-columns: 1fr; gap: 36px; } }
+
+  /* Form wrapper styling — works for both HubSpot embed and any custom form */
+  .form-wrap {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px;
+  }
+  .form-wrap h3 {
+    font-size: 19px;
+    color: var(--navy);
+    margin-bottom: 8px;
+  }
+  .form-wrap p.intro {
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 20px;
+  }
+
+  /* HubSpot form style overrides — match site palette */
+  .form-wrap .hs-form-field { margin-bottom: 14px; }
+  .form-wrap .hs-form-field > label {
+    display: block;
+    font-size: 14px;
+    color: var(--navy);
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .form-wrap .hs-form-field .hs-form-required { color: var(--accent); margin-left: 2px; }
+  .form-wrap .hs-input,
+  .form-wrap input[type="email"],
+  .form-wrap input[type="text"],
+  .form-wrap input[type="tel"],
+  .form-wrap textarea {
+    width: 100% !important;
+    padding: 12px 14px !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 8px !important;
+    font-size: 16px !important;
+    font-family: inherit !important;
+    background: #fff !important;
+    box-sizing: border-box !important;
+    color: var(--text) !important;
+  }
+  .form-wrap .hs-input:focus,
+  .form-wrap input:focus,
+  .form-wrap textarea:focus {
+    outline: none !important;
+    border-color: var(--navy) !important;
+  }
+  .form-wrap textarea { min-height: 96px; resize: vertical; }
+  .form-wrap .hs-button,
+  .form-wrap input[type="submit"],
+  .form-wrap .hs_submit input {
+    width: 100% !important;
+    padding: 14px !important;
+    background: var(--navy) !important;
+    color: #fff !important;
+    border: none !important;
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+    font-size: 16px !important;
+    font-family: inherit !important;
+    cursor: pointer !important;
+    margin-top: 6px !important;
+    transition: background 0.18s ease;
+  }
+  .form-wrap .hs-button:hover,
+  .form-wrap input[type="submit"]:hover { background: #2a3759 !important; }
+  .form-wrap .hs-error-msgs { list-style: none; padding: 0; margin: 4px 0 0; }
+  .form-wrap .hs-error-msg,
+  .form-wrap .hs-main-font-element { color: #B00020; font-size: 13px; }
+  .form-wrap .submitted-message { color: var(--navy); font-size: 16px; }
+  .form-note {
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 16px;
+    line-height: 1.5;
+  }
+
+  .contact-direct h3 {
+    font-size: 19px;
+    color: var(--navy);
+    margin-bottom: 16px;
+  }
+  .contact-direct .row {
+    padding: 14px 0;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+  }
+  .contact-direct .row:first-of-type { border-top: none; }
+  .contact-direct .label {
+    color: var(--muted);
+    font-size: 14px;
+  }
+  .contact-direct .value {
+    color: var(--navy);
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 16px;
+  }
+  .contact-direct .value:hover { color: var(--accent); }
+
+  .scorecard-block {
+    margin-top: 28px;
+    padding: 22px;
+    border: 1px dashed var(--accent);
+    border-radius: 12px;
+    background: var(--cream);
+  }
+  .scorecard-block h4 {
+    color: var(--navy);
+    margin-bottom: 6px;
+    font-size: 16px;
+  }
+  .scorecard-block p {
+    color: var(--slate);
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+  .scorecard-block a {
+    display: inline-block;
+    color: var(--accent);
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 15px;
+  }
+  .scorecard-block a:hover { color: #8E6D2C; }
+
+  /* ---- footer ---- */
+  footer {
+    padding: 36px 0;
+    color: var(--muted);
+    font-size: 14px;
+    text-align: center;
+    background: #fff;
+  }
+  footer .links { margin-bottom: 8px; }
+  footer .links a {
+    color: var(--slate);
+    text-decoration: none;
+    margin: 0 12px;
+  }
+  footer .links a:hover { color: var(--navy); }
+
+  /* utilities */
+  .stack > * + * { margin-top: 16px; }
+  .strong-quote {
+    font-size: clamp(20px, 2.4vw, 26px);
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1.3;
+    margin-bottom: 12px;
+  }
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <div class="container nav-inner">
+    <a href="#" class="brand">C M O <span class="accent">·</span> S Y S T E M S <span class="accent">·</span> F O U N D A T I O N S</a>
+    <div class="nav-links">
+      <a href="#sprint">The Sprint</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#operator">Ongoing</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container">
+    <div class="eyebrow">FOUNDATIONS · A CMO SYSTEMS PRODUCT</div>
+    <h1>Revenue Foundations for Founder-Led Businesses</h1>
+    <p class="deck">Most service businesses don't have a marketing problem. They have a clarity problem. Foundations installs the systems that move you from founder-led chaos to founder-led clarity — built for businesses between <strong>$500K and $10M</strong> in annual revenue.</p>
+    <p class="tagline">Culture. Marketing. Operations. — Align the system. Unlock the revenue.</p>
+    <div class="cta-row">
+      <a href="#contact" class="btn btn-primary">Talk to Us</a>
+      <a href="https://revfrictionscorecard.cmosystems.co" class="btn btn-secondary" target="_blank" rel="noopener">Take the Free Scorecard →</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>The Problem We Fix</h2>
+    <p class="strong-quote">Founders are running operations, sales, and delivery while marketing happens in fits and starts.</p>
+    <p class="lede">Misalignment between the offer, the audience, and the way leads convert creates friction that owner-time alone can't fix. Plans get made and stall. Campaigns start and don't finish. The team can't keep pace with the founder, and the founder can't slow down enough to teach. Foundations is the lightest version of the framework we use with $10M+ companies — built for the stage where the founder is still the system.</p>
+  </div>
+</section>
+
+<section class="alt" id="approach">
+  <div class="container">
+    <h2>How We Work</h2>
+    <p class="lede">Same framework as the parent CMO Systems brand. Smaller scope. We align three things — and the rest of the business follows.</p>
+    <div class="pillars">
+      <div class="pillar">
+        <h3>People</h3>
+        <p>Accountability, ownership, and clarity across the team. Who owns what stage of revenue.</p>
+      </div>
+      <div class="pillar">
+        <h3>Process</h3>
+        <p>How revenue actually flows through your business. Where it leaks, where it stalls, where it compounds.</p>
+      </div>
+      <div class="pillar">
+        <h3>Performance</h3>
+        <p>Demand quality, messaging, and conversion. The numbers that decide whether the system is working.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="sprint">
+  <div class="container">
+    <h2>The Foundations Sprint</h2>
+    <p class="lede">A focused engagement to identify and eliminate revenue friction in your business. Two phases. Two deliverables. Six to eight weeks.</p>
+    <div class="phases">
+      <div class="phase">
+        <div class="label">PHASE 1 · WEEKS 1–2</div>
+        <h3>Friction Audit</h3>
+        <ul>
+          <li>Funnel and conversion check</li>
+          <li>Sales / marketing alignment review</li>
+          <li>ICP and messaging evaluation</li>
+          <li>Process gaps and pipeline diagnostics</li>
+        </ul>
+        <div class="deliverable">
+          You walk away with
+          <strong>The Foundations Scorecard</strong>
+        </div>
+      </div>
+      <div class="phase">
+        <div class="label">PHASE 2 · WEEKS 3–END</div>
+        <h3>Foundations Build</h3>
+        <ul>
+          <li>Define ICP and unified messaging</li>
+          <li>Install basic CRM and data hygiene</li>
+          <li>Establish KPI cadence and reporting</li>
+          <li>Build founder-led execution playbook</li>
+        </ul>
+        <div class="deliverable">
+          You walk away with
+          <strong>The CMO Operating Playbook</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="pricing">
+  <div class="container">
+    <h2>Investment</h2>
+    <p class="lede">Pricing is set by the size of your business. The Sprint is fixed-fee — no surprises, no hourly billing.</p>
+    <table class="price-table">
+      <thead>
+        <tr>
+          <th>Tier</th>
+          <th>Annual Revenue</th>
+          <th>Duration</th>
+          <th>Investment</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Bootstrapped</td><td>$500K–$1M</td><td>6 weeks</td><td class="price">$7,500</td></tr>
+        <tr><td>Growth</td><td>$1M–$3M</td><td>6 weeks</td><td class="price">$15,000</td></tr>
+        <tr><td>Scale</td><td>$3M–$10M</td><td>8 weeks</td><td class="price">$25,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>What You Walk Away With</h2>
+    <p class="lede">By the end of the Sprint, you have the systems and the language to run marketing without the founder being the bottleneck.</p>
+    <ul class="outcomes">
+      <li>A one-page picture of where revenue is leaking and why</li>
+      <li>A clear ICP and unified messaging the whole business can use</li>
+      <li>A working CRM and data foundation that doesn't require a full-time admin</li>
+      <li>A KPI cadence that fits how you actually run the business</li>
+      <li>An execution playbook the founder (or first marketing hire) can run</li>
+      <li>A clear path forward — and a partner if you want one</li>
+    </ul>
+  </div>
+</section>
+
+<section class="alt" id="operator">
+  <div class="container">
+    <h2>Ongoing — Foundations Operator</h2>
+    <p class="lede">Optional post-Sprint retainer. Three commitment levels — choose the one that matches what you need. Every tier carries the same framework; the difference is cadence and depth.</p>
+    <table class="price-table">
+      <thead>
+        <tr>
+          <th>Tier</th>
+          <th>Hours / mo</th>
+          <th>Cadence</th>
+          <th>Best For</th>
+          <th>Investment</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Coach</td><td>4 hrs</td><td>Monthly + async</td><td>Founder needs accountability, not execution</td><td class="price">$1,500 / mo</td></tr>
+        <tr><td>Builder</td><td>10 hrs</td><td>Bi-weekly + same-day async</td><td>Active execution support</td><td class="price">$3,750 / mo</td></tr>
+        <tr><td>Operator Lite</td><td>20 hrs</td><td>Weekly + standing seat</td><td>Embedded marketing leadership</td><td class="price">$7,500 / mo</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>Who This Is For</h2>
+    <p class="lede">Foundations is built for businesses between <strong>$500K and $10M</strong> in annual revenue. Two segments fit best:</p>
+    <div class="two-col">
+      <ul class="who-list">
+        <li>Service businesses ($1M–$10M) where the founder is still selling, delivering, and managing marketing</li>
+        <li>Bootstrapped small businesses ($500K–$3M) ready to install marketing systems for the first time</li>
+        <li>Owners who feel the business has plateaued and the path forward isn't obvious</li>
+        <li>Teams with plans but no rhythm — campaigns that start and stall</li>
+        <li>Founders who need senior marketing leadership but can't justify a full-time hire</li>
+      </ul>
+      <div class="grad-card">
+        <h3>Outgrowing Foundations</h3>
+        <p>As your business scales past $10M and complexity grows, Foundations clients graduate into the parent CMO Systems brand and the 90-Day Revenue Alignment Program. Same framework, deeper scope. The system you build during Foundations is the foundation for what comes next.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="closer">
+  <div class="container">
+    <div class="lines">
+      <p>Same framework. Smaller scope.</p>
+      <p>Built for the businesses where the founder is still the system.</p>
+    </div>
+    <div class="tagline">Align the system. Unlock the revenue.</div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <h2>Let's Talk</h2>
+    <p class="lede">Tell us a little about your business and we'll get back to you. Or grab the free Scorecard below to see whether a Sprint makes sense.</p>
+    <div class="contact-grid">
+      <div class="form-wrap">
+        <h3>Get in Touch</h3>
+        <p class="intro">Tell us about your business — we'll reply within one business day.</p>
+        <!-- HubSpot form embed (Foundations Contact form) -->
+        <script src="https://js-na2.hsforms.net/forms/embed/245854612.js" defer></script>
+        <div class="hs-form-frame" data-region="na2" data-form-id="f1aeebf1-12bf-4ed0-b784-d7114b808270" data-portal-id="245854612"></div>
+        <p class="form-note">Submissions go straight into our HubSpot CRM. No spam, no list-bombing.</p>
+      </div>
+      <div class="contact-direct">
+        <h3>Direct contact</h3>
+        <div class="row">
+          <span class="label">Email</span>
+          <a href="mailto:hello.cmosystems@gmail.com" class="value">hello.cmosystems@gmail.com</a>
+        </div>
+        <div class="row">
+          <span class="label">Phone</span>
+          <a href="tel:+13124891607" class="value">1.312.489.1607</a>
+        </div>
+        <div class="row">
+          <span class="label">Parent brand</span>
+          <a href="https://cmosystems.co" class="value" target="_blank" rel="noopener">cmosystems.co</a>
+        </div>
+
+        <div class="scorecard-block">
+          <h4>Not sure if Foundations is right for you?</h4>
+          <p>Take the free Revenue Friction Scorecard — a short, self-serve diagnostic. It'll give you a starting picture of where your revenue system might be leaking and whether a Sprint is the right next step.</p>
+          <a href="https://revfrictionscorecard.cmosystems.co" target="_blank" rel="noopener">Take the Scorecard →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="links">
+      <a href="https://cmosystems.co" target="_blank" rel="noopener">cmosystems.co</a>
+      <a href="https://revfrictionscorecard.cmosystems.co" target="_blank" rel="noopener">Revenue Friction Scorecard</a>
+      <a href="mailto:hello.cmosystems@gmail.com">hello.cmosystems@gmail.com</a>
+    </div>
+    <div>© <span id="year"></span> CMO Systems. Foundations is a CMO Systems product.</div>
+  </div>
+</footer>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+</body>
+</html>
