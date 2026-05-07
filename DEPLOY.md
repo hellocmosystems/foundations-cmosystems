@@ -149,7 +149,7 @@ Visit `https://foundations.cmosystems.co` and check:
 - [ ] Hero, sections, pricing tables all render
 - [ ] Mobile view works (resize browser or check on phone)
 - [ ] Click "Take the Scorecard →" — opens `revfrictionscorecard.cmosystems.co` in new tab
-- [ ] Submit the contact form with a test email — confirm a new Contact appears in HubSpot AND a notification lands at `hello.cmosystems@gmail.com`
+- [ ] Submit the contact form with a test email — confirm a new Contact appears in HubSpot AND a notification lands at `hello@cmosystems.co`
 
 ---
 
