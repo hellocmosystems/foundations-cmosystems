@@ -399,7 +399,6 @@
   }
   @media (max-width: 800px) { .contact-grid { grid-template-columns: 1fr; gap: 36px; } }
 
-  /* Form wrapper styling — works for both HubSpot embed and any custom form */
   .form-wrap {
     background: #fff;
     border: 1px solid var(--border);
@@ -416,61 +415,6 @@
     color: var(--muted);
     margin-bottom: 20px;
   }
-
-  /* HubSpot form style overrides — match site palette */
-  .form-wrap .hs-form-field { margin-bottom: 14px; }
-  .form-wrap .hs-form-field > label {
-    display: block;
-    font-size: 14px;
-    color: var(--navy);
-    font-weight: 600;
-    margin-bottom: 6px;
-  }
-  .form-wrap .hs-form-field .hs-form-required { color: var(--accent); margin-left: 2px; }
-  .form-wrap .hs-input,
-  .form-wrap input[type="email"],
-  .form-wrap input[type="text"],
-  .form-wrap input[type="tel"],
-  .form-wrap textarea {
-    width: 100% !important;
-    padding: 12px 14px !important;
-    border: 1px solid var(--border) !important;
-    border-radius: 8px !important;
-    font-size: 16px !important;
-    font-family: inherit !important;
-    background: #fff !important;
-    box-sizing: border-box !important;
-    color: var(--text) !important;
-  }
-  .form-wrap .hs-input:focus,
-  .form-wrap input:focus,
-  .form-wrap textarea:focus {
-    outline: none !important;
-    border-color: var(--navy) !important;
-  }
-  .form-wrap textarea { min-height: 96px; resize: vertical; }
-  .form-wrap .hs-button,
-  .form-wrap input[type="submit"],
-  .form-wrap .hs_submit input {
-    width: 100% !important;
-    padding: 14px !important;
-    background: var(--navy) !important;
-    color: #fff !important;
-    border: none !important;
-    border-radius: 8px !important;
-    font-weight: 600 !important;
-    font-size: 16px !important;
-    font-family: inherit !important;
-    cursor: pointer !important;
-    margin-top: 6px !important;
-    transition: background 0.18s ease;
-  }
-  .form-wrap .hs-button:hover,
-  .form-wrap input[type="submit"]:hover { background: #2a3759 !important; }
-  .form-wrap .hs-error-msgs { list-style: none; padding: 0; margin: 4px 0 0; }
-  .form-wrap .hs-error-msg,
-  .form-wrap .hs-main-font-element { color: #B00020; font-size: 13px; }
-  .form-wrap .submitted-message { color: var(--navy); font-size: 16px; }
   .form-note {
     font-size: 13px;
     color: var(--muted);
@@ -757,7 +701,7 @@
         <h3>Direct contact</h3>
         <div class="row">
           <span class="label">Email</span>
-          <a href="mailto:hello.cmosystems@gmail.com" class="value">hello.cmosystems@gmail.com</a>
+          <a href="mailto:hello@cmosystems.co" class="value">hello@cmosystems.co</a>
         </div>
         <div class="row">
           <span class="label">Phone</span>
@@ -783,7 +727,7 @@
     <div class="links">
       <a href="https://cmosystems.co" target="_blank" rel="noopener">cmosystems.co</a>
       <a href="https://revfrictionscorecard.cmosystems.co" target="_blank" rel="noopener">Revenue Friction Scorecard</a>
-      <a href="mailto:hello.cmosystems@gmail.com">hello.cmosystems@gmail.com</a>
+      <a href="mailto:hello@cmosystems.co">hello@cmosystems.co</a>
     </div>
     <div>© <span id="year"></span> CMO Systems. Foundations is a CMO Systems product.</div>
   </div>
